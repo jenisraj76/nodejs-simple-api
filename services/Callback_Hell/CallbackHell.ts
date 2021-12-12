@@ -1,36 +1,31 @@
-const function1 = async (req: string): Promise<string> => {
-    return new Promise((resolve, reject) => {
-        resolve(req + 'added and First Program Executed');
-    })
+const function1 = async (req: string, callback: Function) => {
+    let result = req + 'added and First Program Executed';
+    callback(result);
 }
 
-const function2 = async (text1: string): Promise<string> => {
-    return new Promise((resolve, reject) => {
-        resolve(text1 + ' after Second Program Executed');
-    })
+const function2 = async (text1: string, callback: Function) => {
+    let result = text1 + ' after Second Program Executed'
+    callback(result);
 }
 
-const function3 = async (text2: string): Promise<string> => {
-    return new Promise((resolve, reject) => {
-        resolve(text2 + ' after Third Program Executed');
-    })
+const function3 = async (text2: string, callback: Function) => {
+    let result = text2 + ' after Third Program Executed';
+    callback(result);
 }
 
 const callbackHell = async (req: string) => {
     return new Promise<string>((resolve, reject) => {
-        function1(req).then(text1 => {
-            // console.log(text1);
-            function2(text1).then(text2 => {
-                // console.log(text2);
-                function3(text2).then(text3 => {
-                    // console.log(text3);
-                    // console.log('finished');
+        function1(req,function(text1:string)
+        {
+            function2(text1, function(text2:string)
+            {
+                function3(text2, function(text3:string)
+                {
                     resolve(text3);
                 })
             })
-        });
-    })
-
+        })
+    })  
 }
 
 export const main = async (req: string) => {
