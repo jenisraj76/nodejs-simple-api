@@ -1,12 +1,10 @@
  
 
-# Welcome Phantom-Interview
+# Jenis Raj
 
-## Jenis Raj
-### software Engineer
-
-- use vs code for execute the server
-- in vs code use extention thunder client 
-- in thunder client setting enable load from project
-- after enable reload the project
-- check with collecton and execute one by one
+## Project setup
+- configure typescript and nodejs with vscode
+- use thunder client extention in vscode
+- enable load from project setting in thunder client  
+- once you enabled restart the vscode
+- now you can see the apis in the thunder client explorer
